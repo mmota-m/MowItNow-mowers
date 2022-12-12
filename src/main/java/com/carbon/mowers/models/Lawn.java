@@ -1,5 +1,7 @@
 package com.carbon.mowers.models;
 
+import com.carbon.mowers.models.position.Dimension;
+
 import java.util.Collections;
 import java.util.List;
 
