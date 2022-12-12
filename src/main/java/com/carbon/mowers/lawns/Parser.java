@@ -1,7 +1,7 @@
-package com.carbon.mowers;
+package com.carbon.mowers.lawns;
 
 import com.carbon.mowers.exceptions.LawnInitializationErrorException;
-import com.carbon.mowers.models.Lawn;
+import com.carbon.mowers.lawns.models.Lawn;
 
 import java.util.List;
 

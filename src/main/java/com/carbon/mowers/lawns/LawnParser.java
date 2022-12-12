@@ -1,12 +1,12 @@
-package com.carbon.mowers;
+package com.carbon.mowers.lawns;
 
 import com.carbon.mowers.exceptions.LawnInitializationErrorException;
-import com.carbon.mowers.models.Instruction;
-import com.carbon.mowers.models.Lawn;
-import com.carbon.mowers.models.Mower;
-import com.carbon.mowers.models.position.Coordinates;
-import com.carbon.mowers.models.position.Dimension;
-import com.carbon.mowers.models.position.Orientation;
+import com.carbon.mowers.lawns.models.Instruction;
+import com.carbon.mowers.lawns.models.Lawn;
+import com.carbon.mowers.lawns.models.Mower;
+import com.carbon.mowers.lawns.models.position.Coordinates;
+import com.carbon.mowers.lawns.models.position.Dimension;
+import com.carbon.mowers.lawns.models.position.Orientation;
 
 import java.util.ArrayList;
 import java.util.Collections;

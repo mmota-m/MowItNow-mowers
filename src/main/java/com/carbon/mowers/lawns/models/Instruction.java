@@ -1,4 +1,4 @@
-package com.carbon.mowers.models;
+package com.carbon.mowers.lawns.models;
 
 public enum Instruction {
     TURN_RIGHT,

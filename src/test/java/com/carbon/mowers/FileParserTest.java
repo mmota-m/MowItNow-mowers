@@ -1,12 +1,13 @@
 package com.carbon.mowers;
 
 import com.carbon.mowers.exceptions.LawnInitializationErrorException;
-import com.carbon.mowers.models.Instruction;
-import com.carbon.mowers.models.Lawn;
-import com.carbon.mowers.models.Mower;
-import com.carbon.mowers.models.position.Coordinates;
-import com.carbon.mowers.models.position.Dimension;
-import com.carbon.mowers.models.position.Orientation;
+import com.carbon.mowers.lawns.LawnParser;
+import com.carbon.mowers.lawns.models.Instruction;
+import com.carbon.mowers.lawns.models.Lawn;
+import com.carbon.mowers.lawns.models.Mower;
+import com.carbon.mowers.lawns.models.position.Coordinates;
+import com.carbon.mowers.lawns.models.position.Dimension;
+import com.carbon.mowers.lawns.models.position.Orientation;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -17,23 +18,14 @@ import org.junit.jupiter.params.provider.ValueSource;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.carbon.mowers.LawnTestSample.instructionsSample;
+import static com.carbon.mowers.LawnTestSample.mowerCreationSample;
 import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("File Parser Test should")
 public class FileParserTest {
 
     private LawnParser parser;
-
-    public static final List<Instruction> instructionsSample = List.of(
-            Instruction.TURN_LEFT, Instruction.FORWARD,
-            Instruction.TURN_LEFT, Instruction.FORWARD,
-            Instruction.TURN_LEFT, Instruction.FORWARD,
-            Instruction.TURN_LEFT, Instruction.FORWARD, Instruction.FORWARD);
-
-    public static final Mower mowerCreationSample = new Mower(
-            new Coordinates(1, 2),
-            Orientation.NORTH,
-            instructionsSample);
 
     @BeforeEach
     void initParser() {
