@@ -1,4 +1,4 @@
-package com.carbon.mowers.models.position;
+package com.carbon.mowers.lawns.models.position;
 
 public record Dimension(
         int width,

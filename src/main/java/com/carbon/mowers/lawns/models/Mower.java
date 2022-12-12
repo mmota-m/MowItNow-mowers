@@ -1,6 +1,6 @@
-package com.carbon.mowers.models;
-import com.carbon.mowers.models.position.Coordinates;
-import com.carbon.mowers.models.position.Orientation;
+package com.carbon.mowers.lawns.models;
+import com.carbon.mowers.lawns.models.position.Coordinates;
+import com.carbon.mowers.lawns.models.position.Orientation;
 
 import java.util.Collections;
 import java.util.List;

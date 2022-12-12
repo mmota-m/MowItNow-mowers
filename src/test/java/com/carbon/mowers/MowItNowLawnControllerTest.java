@@ -1,12 +1,12 @@
 package com.carbon.mowers;
 
 import com.carbon.mowers.lawns.MowItNowLawnController;
-import com.carbon.mowers.models.Instruction;
-import com.carbon.mowers.models.Lawn;
-import com.carbon.mowers.models.Mower;
-import com.carbon.mowers.models.position.Coordinates;
-import com.carbon.mowers.models.position.Dimension;
-import com.carbon.mowers.models.position.Orientation;
+import com.carbon.mowers.lawns.models.Instruction;
+import com.carbon.mowers.lawns.models.Lawn;
+import com.carbon.mowers.lawns.models.Mower;
+import com.carbon.mowers.lawns.models.position.Coordinates;
+import com.carbon.mowers.lawns.models.position.Dimension;
+import com.carbon.mowers.lawns.models.position.Orientation;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -158,6 +158,40 @@ public class MowItNowLawnControllerTest {
                         )
                 ));
         assertEquals(expected, actual);
+    }
+
+    @ParameterizedTest
+    @DisplayName("do nothing when Mower going outside the lawn")
+    @MethodSource
+    void doNotMoveMowersWhenTheyAreGoingOustideTheLawn(Mower mower) {
+        List<Mower> expectedMowers = List.of(new Mower(
+                mower.coordinates(),
+                mower.orientation(),
+                mower.instructions()
+        ));
+        Lawn expected = new Lawn(
+                new Dimension(3, 3),
+                expectedMowers
+        );
+        Lawn actual = controller.mow(new Lawn(
+                new Dimension(3, 3),
+                List.of(mower)
+        ));
+        assertEquals(expected, actual);
+    }
+
+    static Stream<Arguments> doNotMoveMowersWhenTheyAreGoingOustideTheLawn() {
+        final var mowerNorth = new Mower(new Coordinates(2, 3), Orientation.NORTH, List.of(Instruction.FORWARD));
+        final var mowerEast = new Mower(new Coordinates(3, 2), Orientation.EAST, List.of(Instruction.FORWARD));
+        final var mowerSouth = new Mower(new Coordinates(2, 0), Orientation.SOUTH, List.of(Instruction.FORWARD));
+        final var mowerWest = new Mower(new Coordinates(0, 2), Orientation.WEST, List.of(Instruction.FORWARD));
+
+        return Stream.of(
+                arguments(mowerNorth),
+                arguments(mowerEast),
+                arguments(mowerSouth),
+                arguments(mowerWest)
+        );
     }
 
 }

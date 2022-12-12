@@ -1,10 +1,10 @@
 package com.carbon.mowers;
 
-import com.carbon.mowers.models.Instruction;
-import com.carbon.mowers.models.Mower;
-import com.carbon.mowers.models.position.Coordinates;
-import com.carbon.mowers.models.position.Dimension;
-import com.carbon.mowers.models.position.Orientation;
+import com.carbon.mowers.lawns.models.Instruction;
+import com.carbon.mowers.lawns.models.Mower;
+import com.carbon.mowers.lawns.models.position.Coordinates;
+import com.carbon.mowers.lawns.models.position.Dimension;
+import com.carbon.mowers.lawns.models.position.Orientation;
 
 import java.util.List;
 
