@@ -1,5 +1,6 @@
 package com.carbon.mowers.models;
 
+import com.carbon.mowers.models.position.Coordinates;
 import com.carbon.mowers.models.position.Dimension;
 
 import java.util.Collections;
@@ -9,5 +10,10 @@ public record Lawn(Dimension dimension, List<Mower> mowers) {
     public Lawn(Dimension dimension, List<Mower> mowers) {
         this.dimension = dimension;
         this.mowers = Collections.unmodifiableList(mowers);
+    }
+
+    public boolean isInsideLawn(Coordinates point) {
+        return point.x() <= this.dimension().width() & point.y() <= this.dimension().height()
+                & point.x() >= 0 & point.y() >= 0;
     }
 }

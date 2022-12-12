@@ -20,4 +20,12 @@ public record Mower(
         this.instructions = Collections.unmodifiableList(instructions);
     }
 
+    public Mower withCoordinates(Coordinates coordinates) {
+        return new Mower(coordinates, orientation(), instructions());
+    }
+
+    public Mower withOrientation(Orientation orientation) {
+        return new Mower(coordinates(), orientation, instructions());
+    }
+
 }

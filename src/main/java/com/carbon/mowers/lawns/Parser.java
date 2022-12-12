@@ -1,4 +1,4 @@
-package com.carbon.mowers;
+package com.carbon.mowers.lawns;
 
 import com.carbon.mowers.exceptions.LawnInitializationErrorException;
 import com.carbon.mowers.models.Lawn;
